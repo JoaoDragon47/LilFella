@@ -1,22 +1,27 @@
-globalvar tCell;
-tCell=16;
-globalvar wDisplay;
-globalvar hDisplay;
-wDisplay=display_get_width();
-hDisplay=display_get_height();
-globalvar surfInterface;
-surfInterface=noone;
+global.surface_interface = noone
+global.monitor_width = display_get_width()
+global.monitor_height = display_get_height()
 
-#macro FRAME game_get_speed(gamespeed_fps)
-
-enum StatesIndex{
+enum StatesIndex {
 	Idle,
 	Walk,
-	Carrying
+	Carrying,
+	Length
 }
 
-globalvar fntGame;
-fntGame=font_add_sprite_ext(sprFontGame,"/\\|!?,;.:%*-+_[]{}<>()#'\"=&abcdefghijklmnopqrstuvwxyzçáàâãéèêíìîóòôõúùûABCDEFGHIJKLMNOPQRSTUVWXYZÇÁÀÂÃÉÈÊÍÌÎÓÒÔÕÚÙÛ0123456789",true,0);
+enum Infos {
+	Name,
+	Sprites,
+	Length
+}
 
+globalvar FontGame;
+FontGame = font_add_sprite_ext(spr_font_game, "/\\|!?,;.:%*-+_[]{}<>()#'\"=&abcdefghijklmnopqrstuvwxyzçáàâãéèêíìîóòôõúùûABCDEFGHIJKLMNOPQRSTUVWXYZÇÁÀÂÃÉÈÊÍÌÎÓÒÔÕÚÙÛ0123456789", true, 0)
+
+globalvar Skins;
+globalvar SkinsCount;
+globalvar SkinsInfos;
 globalvar SkinsFile;
-SkinsFile="skins_data.dat";
+globalvar SkinsDirectory;
+SkinsFile = "skins_data.dat"
+SkinsDirectory = working_directory + "skins"

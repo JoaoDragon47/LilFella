@@ -22,8 +22,8 @@ with(skinSize){
 
 with(confirmButton){
 	
-	drawAlign(fa_middle,fa_center);
-	draw_set_font(fntGame);
+	draw_align(fa_middle,fa_center);
+	draw_set_font(FontGame);
 	
 	c=make_color_rgb(190,190,190);
 	if(point_in_rectangle(mx,my,xInitial,yInitial,xInitial+wButton,yInitial+hButton)){
@@ -34,12 +34,12 @@ with(confirmButton){
 	c=c_white;
 	draw_text_color(xInitial+(wButton/2),yInitial+(hButton/2),"Adicionar",c,c,c,c,1);
 	if(timer>0){
-		drawAlign(fa_middle,fa_left);
+		draw_align(fa_middle,fa_left);
 		c=make_color_rgb(255,50,60);
 		draw_text_color(objInputBoxSkinPath.xInitial+objInputBoxSkinPath.width+12,objInputBoxSkinPath.yInitial+(objInputBoxSkinPath.height/2),"<- "+timerText,c,c,c,c,1);
 	}
 
-	drawReset();
+	draw_reset();
 }
 
 surface_reset_target();

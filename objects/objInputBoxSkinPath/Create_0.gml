@@ -1,9 +1,9 @@
 /// @description Init
 //Init variables (if you want to use the same object for different instances then put all the below in each instance's Creation Code)
-var _defaultArray = ["Imagem Skin",fntGame,true];
+var _defaultArray = ["Imagem Skin",FontGame,true];
 var _hideArray = [false,"*",fnt_hide,font_get_size(fnt_hide)+8];
 var _excludedArray = [";","!"];
-input_box_init(xInitial,yInitial,192,24,font_get_size(fntGame)+7,false,_defaultArray,192-(4*3),30,6,fntGame,1,_hideArray,0,_excludedArray,objDropdownBoxSkinSize);
+input_box_init(xInitial,yInitial,192,24,font_get_size(FontGame)+7,false,_defaultArray,192-(4*3),30,6,FontGame,1,_hideArray,0,_excludedArray,objDropdownBoxSkinSize);
 
 //step variables
 canCutCopy = true;

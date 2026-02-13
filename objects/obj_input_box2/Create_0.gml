@@ -1,9 +1,9 @@
 /// @description Init
 //Init variables (if you want to use the same object for different instances then put all the below in each instance's Creation Code)
-var _defaultArray = ["password",fntGame,true];
+var _defaultArray = ["password",FontGame,true];
 var _hideArray = [true,"*",fnt_hide,font_get_size(fnt_hide)+8];
 var _excludedArray = [";","!"];
-input_box_init((room_width/2)+16,(room_height/2)-12,192,24,font_get_size(fntGame)+7,false,_defaultArray,192-(4*3),30,6,fntGame,1,_hideArray,0,_excludedArray,obj_dropdown_box);
+input_box_init((room_width/2)+16,(room_height/2)-12,192,24,font_get_size(FontGame)+7,false,_defaultArray,192-(4*3),30,6,FontGame,1,_hideArray,0,_excludedArray,obj_dropdown_box);
 
 //step variables
 canCutCopy = false;

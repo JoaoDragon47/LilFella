@@ -12,17 +12,18 @@ function PetChooseState(){
 		case PetIdleState:
 			state=PetIdleState;
 			break;
-		case PetWalkToMouseState:
-			xDest=mouse_x;
-			yDest=mouse_y;
+		//case PetWalkToMouseState:
+		//	xDest=mouse_x;
+		//	yDest=mouse_y;
 			
-			state=PetWalkToMouseState;
-			break;
+		//	state=PetWalkToMouseState;
+		//	break;
 	}
 }
 
 function PetWalkState(){
-	stateIndex=StatesIndex.Walk;
+	state_index=StatesIndex.Walk;
+	sprite_base = Skins[skin_id][state_index]
 	changeStateTimer--;
 	
 	dir=point_direction(x,y,xDest,yDest);
@@ -32,7 +33,7 @@ function PetWalkState(){
 	x+=hspd;
 	y+=vspd;
 	if(point_distance(x,y,xDest,yDest)<=spd*1.5){
-		stateIndex=StatesIndex.Idle;
+		state_index=StatesIndex.Idle;
 		x=xDest;
 		y=yDest;
 		dir=270;
@@ -40,7 +41,8 @@ function PetWalkState(){
 }
 
 function PetIdleState(){
-	stateIndex=StatesIndex.Idle;
+	state_index=StatesIndex.Idle;
+	sprite_base = Skins[skin_id][state_index]
 	changeStateTimer--;
 }
 
@@ -49,7 +51,8 @@ function PetLaunchState(){
 		image_angle=-dir;
 		angle=image_angle;
 		launchSpd-=.1;
-		stateIndex=StatesIndex.Walk;
+		state_index=StatesIndex.Walk;
+		sprite_base = Skins[skin_id][state_index]
 		dir=point_direction(x,y,x+hspd,y+vspd);
 		
 		hspd=lengthdir_x(launchSpd,dir);
@@ -68,7 +71,8 @@ function PetLaunchState(){
 		x+=hspd;
 		y+=vspd;
 	}else{
-		stateIndex=StatesIndex.Idle;
+		state_index=StatesIndex.Idle;
+		sprite_base = Skins[skin_id][state_index]
 		angle=0;
 		dir=270;
 		state=PetChooseState;
@@ -79,7 +83,8 @@ function PetWalkToMouseState(){
 	xDest=mouse_x;
 	yDest=mouse_y;
 	
-	stateIndex=StatesIndex.Walk;
+	state_index=StatesIndex.Walk;
+	sprite_base = Skins[skin_id][state_index]
 	
 	dir=point_direction(x,y,xDest,yDest);
 			
@@ -99,7 +104,8 @@ function PetWalkToMouseState(){
 function PetGrabMouseState(){
 	display_mouse_set(x,y);
 	
-	stateIndex=StatesIndex.Walk;
+	state_index=StatesIndex.Walk;
+	sprite_base = Skins[skin_id][state_index]
 	changeStateTimer--;
 	
 	dir=point_direction(x,y,xDest,yDest);
@@ -109,7 +115,8 @@ function PetGrabMouseState(){
 	x+=hspd;
 	y+=vspd;
 	if(point_distance(x,y,xDest,yDest)<=spd*1.5){
-		stateIndex=StatesIndex.Idle;
+		state_index=StatesIndex.Idle;
+		sprite_base = Skins[skin_id][state_index]
 		x=xDest;
 		y=yDest;
 		dir=270;

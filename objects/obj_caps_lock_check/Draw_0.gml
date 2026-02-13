@@ -1,5 +1,5 @@
 ///@description Draw caps
-draw_set_font(fntGame);
+draw_set_font(FontGame);
 draw_set_colour(c_black);
 draw_text((room_width/2)+16,(room_height/2)+20,"Caps Lock is " + caps);
 

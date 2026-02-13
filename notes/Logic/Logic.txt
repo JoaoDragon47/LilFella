@@ -1,0 +1,38 @@
+Pasta Jogo
+	-skins
+		-skin_1
+			-idle.png
+			-walk.png
+			-catch.png
+	-data.win
+	-hx_window_ext.dll
+	-little_guy.exe
+	-options.ini
+	-skins_data.dat*
+
+
+*Esse arquivo não vem por padrão, é criado após a 1º inicialização do jogo.
+
+Padrão do 'skins_data.dat' será uma lista que conterá todos os dados das skins.
+Cada skin será uma lista também, contendo todos os estados, indicando os valores de velocidade da animação, tamanho do frame e da animação...
+
+EX:
+[
+	[	// Primeira skin
+		{	// StatesIndex.Idle
+			anim_speed: 4,
+			anim_length: 2,
+			frame_size: 16
+		},
+		{	// StatesIndex.Walk
+			anim_speed: 6,
+			anim_length: 5,
+			frame_size: 16
+		},
+		{	// StatesIndex.Carrying
+			anim_speed: 4,
+			anim_length: 2,
+			frame_size: 16
+		}
+	]
+]

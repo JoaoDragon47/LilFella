@@ -1,23 +1,23 @@
-var mx=display_mouse_get_x()*wScale,my=display_mouse_get_y()*hScale;
+var mx = display_mouse_get_x(), my = display_mouse_get_y()
 
 if(point_in_rectangle(mx,my,bbox_left,bbox_top,bbox_right,bbox_bottom)){
-	if(mouse_check_button_pressed(mb_right)){
-		//move=!move;
-		if(!move) dir=270;
+	if (mouse_check_button_pressed(mb_right)) {
+		move = !move;
+		if (!move) dir = 270
 		
-		state=PetChooseState;
+		state = PetChooseState
 	}
 }
 
-var _info=skinsInfos[skinID];
-if(move){
-	xDest=mx;
-	yDest=my+(_info.Size*(.8));
+var _info = SkinsInfos[skin_id][Infos.Sprites][state_index]
+if (move) {
+	xDest = mx
+	yDest = my + (_info.frame_size * .8)
 	
 	PetWalkState();
 }else{
 	CarryThePet();
 }
 
-yFrame=floor(((dir+45)/90));
-yFrame=clamp(yFrame,0,3);
+sprite_y_frame = floor(((dir + 45) / 90))
+sprite_y_frame = clamp(sprite_y_frame, 0, 3)

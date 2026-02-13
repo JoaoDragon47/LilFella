@@ -1,10 +1,21 @@
-if(drawGui){
-	var i=0;repeat(skinsCount){
-		var _skin=skins[i];
+if (drawGui) {
+	var _xx = 0
+	var _yy = 0
+	var i = 0; repeat(SkinsCount){
+		_xx = 0
+		var j = 0; repeat(3) {
+			var _skin = Skins[i][j]
+			
+			draw_sprite(_skin, 0, _xx, _yy)
+			
+			_xx += sprite_get_width(_skin)
+			
+			j++
+		}
 		
-		draw_sprite(_skin,0,0,20*i);
+		_yy += MODULE * 4
 		
-		i++;
+		i++
 	}
 	
 	//var _wButtonAddFile=60,_hButtonAddFile=30;
@@ -16,7 +27,7 @@ if(drawGui){
 	//		show_debug_message(skinPathFileClicked);
 	//		if(skinPathFileClicked!=""){
 	//			var _fileName=filename_name(skinPathFileClicked);
-	//			var _fileSkin="skins/"+_fileName;
+	//			var _fileSkin="Skins/"+_fileName;
 	//			ini_open(_fileSkin);
 	//			ini_close();
 	//			file_copy(skinPathFileClicked,_fileSkin);

@@ -1,10 +1,10 @@
-window_set_Penetrate(false);
+window_set_Penetrate(false)
 
-pet_alpha=255;
-window_set_showborder(false);
-window_set_AlphaAndCrkey(pet_alpha,c_black);
-window_set_size(wDisplay,hDisplay);
-display_set_gui_size(wDisplay,hDisplay);
-window_set_position(0,0);
+pet_alpha = 255
+window_set_showborder(false)
+window_set_AlphaAndCrkey(pet_alpha, c_black)
+window_set_size(global.monitor_width, global.monitor_height)
+display_set_gui_size(VIEW_WIDTH, VIEW_HEIGHT)
+window_center()
 
-if(!surface_exists(surfInterface)) surfInterface=surface_create(wDisplay,hDisplay);
+if(!surface_exists(global.surface_interface)) {global.surface_interface = surface_create(global.monitor_width, global.monitor_height)}
