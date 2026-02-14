@@ -1,8 +1,8 @@
 var mx=display_mouse_get_x(),my=display_mouse_get_y();
 var c=make_color_rgb(190,190,190);
 
-if(!surface_exists(surfInterface)) surfInterface=surface_create(wDisplay,hDisplay);
-surface_set_target(surfInterface);
+if(!surface_exists(global.surface_interface)) {global.surface_interface = surface_create(wDisplay,hDisplay)}
+surface_set_target(global.surface_interface);
 draw_clear_alpha(c_black,0);
 
 c=c_white
@@ -44,4 +44,4 @@ with(confirmButton){
 
 surface_reset_target();
 
-draw_surface(surfInterface,0,0);
+draw_surface(global.surface_interface,0,0);

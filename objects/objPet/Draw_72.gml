@@ -8,3 +8,6 @@ if (sprite_x_frame < sprite_length - (sprite_speed / FRAME)) {
 }else{
 	sprite_x_frame = 0
 }
+
+sprite_y_frame = floor(((dir + 45) / 90))
+sprite_y_frame = clamp(sprite_y_frame, 0, 3)

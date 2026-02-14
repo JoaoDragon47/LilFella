@@ -96,8 +96,6 @@ if (!file_exists(SkinsFile)) {
 		}
 	}
 	
-	show_message(Skins)
-	
 	buffer_delete(buff)
 	
 	SkinsCount = array_length(Skins)

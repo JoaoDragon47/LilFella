@@ -56,6 +56,7 @@
     {"id":{"name":"objMouse","path":"objects/objMouse/objMouse.yy",},},
     {"id":{"name":"objPet","path":"objects/objPet/objPet.yy",},},
     {"id":{"name":"rmLoadData","path":"rooms/rmLoadData/rmLoadData.yy",},},
+    {"id":{"name":"rmPetLocal","path":"rooms/rmPetLocal/rmPetLocal.yy",},},
     {"id":{"name":"GlobalVariables","path":"scripts/GlobalVariables/GlobalVariables.yy",},},
     {"id":{"name":"hx_window_main","path":"scripts/hx_window_main/hx_window_main.yy",},},
     {"id":{"name":"hx_window_other","path":"scripts/hx_window_other/hx_window_other.yy",},},
@@ -77,6 +78,7 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"rmLoadData","path":"rooms/rmLoadData/rmLoadData.yy",},},
+    {"roomId":{"name":"rmPetLocal","path":"rooms/rmPetLocal/rmPetLocal.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

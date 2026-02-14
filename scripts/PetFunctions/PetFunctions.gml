@@ -1,11 +1,11 @@
 function PetChooseState(){
-	nextState=choose(PetWalkState,PetIdleState,PetWalkToMouseState);
-	changeStateTimer=FRAME*random_range(1.5,4);
+	next_state=choose(PetWalkState,PetIdleState,PetWalkToMouseState);
+	timer_to_change_state=FRAME*random_range(1.5,4);
 	
-	switch nextState{
+	switch next_state{
 		case PetWalkState:
-			xDest=irandom(room_width);
-			yDest=irandom(room_height);
+			x_dest=irandom(room_width);
+			y_dest=irandom(room_height);
 			
 			state=PetWalkState;
 			break;
@@ -13,8 +13,8 @@ function PetChooseState(){
 			state=PetIdleState;
 			break;
 		//case PetWalkToMouseState:
-		//	xDest=mouse_x;
-		//	yDest=mouse_y;
+		//	x_dest=mouse_x;
+		//	y_dest=mouse_y;
 			
 		//	state=PetWalkToMouseState;
 		//	break;
@@ -24,18 +24,18 @@ function PetChooseState(){
 function PetWalkState(){
 	state_index=StatesIndex.Walk;
 	sprite_base = Skins[skin_id][state_index]
-	changeStateTimer--;
+	timer_to_change_state--;
 	
-	dir=point_direction(x,y,xDest,yDest);
+	dir=point_direction(x,y,x_dest,y_dest);
 			
 	hspd=lengthdir_x(spd,dir);
 	vspd=lengthdir_y(spd,dir);
 	x+=hspd;
 	y+=vspd;
-	if(point_distance(x,y,xDest,yDest)<=spd*1.5){
+	if(point_distance(x,y,x_dest,y_dest)<=spd*1.5){
 		state_index=StatesIndex.Idle;
-		x=xDest;
-		y=yDest;
+		x=x_dest;
+		y=y_dest;
 		dir=270;
 	}
 }
@@ -43,29 +43,29 @@ function PetWalkState(){
 function PetIdleState(){
 	state_index=StatesIndex.Idle;
 	sprite_base = Skins[skin_id][state_index]
-	changeStateTimer--;
+	timer_to_change_state--;
 }
 
 function PetLaunchState(){
-	if(launchSpd>0){
+	if(spd_launch>0){
 		image_angle=-dir;
 		angle=image_angle;
-		launchSpd-=.1;
+		spd_launch-=.1;
 		state_index=StatesIndex.Walk;
 		sprite_base = Skins[skin_id][state_index]
 		dir=point_direction(x,y,x+hspd,y+vspd);
 		
-		hspd=lengthdir_x(launchSpd,dir);
-		vspd=lengthdir_y(launchSpd,dir);
+		hspd=lengthdir_x(spd_launch,dir);
+		vspd=lengthdir_y(spd_launch,dir);
 		
 		if(x+hspd>=room_width or x+hspd<=0){
 			hspd=-hspd;
-			launchSpd-=.2;
+			spd_launch-=.2;
 		}
 		
 		if(y+vspd>=room_height or y+vspd<=0){
 			vspd=-vspd;
-			launchSpd-=.2;
+			spd_launch-=.2;
 		}
 		
 		x+=hspd;
@@ -80,22 +80,22 @@ function PetLaunchState(){
 }
 
 function PetWalkToMouseState(){
-	xDest=mouse_x;
-	yDest=mouse_y;
+	x_dest=mouse_x;
+	y_dest=mouse_y;
 	
 	state_index=StatesIndex.Walk;
 	sprite_base = Skins[skin_id][state_index]
 	
-	dir=point_direction(x,y,xDest,yDest);
+	dir=point_direction(x,y,x_dest,y_dest);
 			
 	hspd=lengthdir_x(spd,dir);
 	vspd=lengthdir_y(spd,dir);
 	x+=hspd;
 	y+=vspd;
 	
-	if(point_distance(x,y,xDest,yDest)<=spd*1.5){
-		xDest=irandom(room_width);
-		yDest=irandom(room_height);
+	if(point_distance(x,y,x_dest,y_dest)<=spd*1.5){
+		x_dest=irandom(room_width);
+		y_dest=irandom(room_height);
 		
 		state=PetGrabMouseState;
 	}
@@ -106,19 +106,19 @@ function PetGrabMouseState(){
 	
 	state_index=StatesIndex.Walk;
 	sprite_base = Skins[skin_id][state_index]
-	changeStateTimer--;
+	timer_to_change_state--;
 	
-	dir=point_direction(x,y,xDest,yDest);
+	dir=point_direction(x,y,x_dest,y_dest);
 			
 	hspd=lengthdir_x(spd,dir);
 	vspd=lengthdir_y(spd,dir);
 	x+=hspd;
 	y+=vspd;
-	if(point_distance(x,y,xDest,yDest)<=spd*1.5){
+	if(point_distance(x,y,x_dest,y_dest)<=spd*1.5){
 		state_index=StatesIndex.Idle;
 		sprite_base = Skins[skin_id][state_index]
-		x=xDest;
-		y=yDest;
+		x=x_dest;
+		y=y_dest;
 		dir=270;
 	}
 }

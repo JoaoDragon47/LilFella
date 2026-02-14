@@ -28,3 +28,5 @@ if(keyboard_check(vk_space)){
 		}
 	}
 }
+
+//window_set_position(objPet.x - (MODULE / 2) * 1, objPet.y - (MODULE / 2) * 1)

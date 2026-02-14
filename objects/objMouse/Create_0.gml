@@ -1,1 +1,1 @@
-petHolding=noone;
+pet_holding = noone

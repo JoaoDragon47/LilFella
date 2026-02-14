@@ -3,8 +3,12 @@ window_set_Penetrate(false)
 pet_alpha = 255
 window_set_showborder(false)
 window_set_AlphaAndCrkey(pet_alpha, c_black)
+
 window_set_size(global.monitor_width, global.monitor_height)
 display_set_gui_size(VIEW_WIDTH, VIEW_HEIGHT)
 window_center()
+surface_resize(application_surface, global.monitor_width, global.monitor_height)
 
 if(!surface_exists(global.surface_interface)) {global.surface_interface = surface_create(global.monitor_width, global.monitor_height)}
+
+//file_Open("www.youtube.com/watch?v=Aq5WXmQQooo&pp=ygUJcmljayByb2xs", "")
