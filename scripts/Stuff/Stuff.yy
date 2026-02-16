@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"Stuff",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Global",
+    "path":"folders/Scripts/Global.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

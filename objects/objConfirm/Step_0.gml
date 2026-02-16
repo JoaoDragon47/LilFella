@@ -3,7 +3,7 @@ if(timer>0) timer--;
 if(mouse_check_button_pressed(mb_left)){
 	if(point_in_rectangle(mouse_x,mouse_y,xInitial,yInitial,xInitial+wButton,yInitial+hButton)){
 		with(objCreateSkinConfigs){
-			var _dirSkins=objPet.SkinsDirectory+"/";
+			var _dirSkins=obj_pet.SkinsDirectory+"/";
 			var _file=skinPath.input;
 			
 			if(_file!=""){

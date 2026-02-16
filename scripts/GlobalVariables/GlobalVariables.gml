@@ -1,11 +1,16 @@
 global.surface_interface = noone
 global.monitor_width = display_get_width()
 global.monitor_height = display_get_height()
+global.save_files = false
 
 enum StatesIndex {
 	Idle,
 	Walk,
 	Carrying,
+	Taunt,
+	StealMouse,
+	Sit,
+	Launched,
 	Length
 }
 

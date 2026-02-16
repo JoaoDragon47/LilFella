@@ -1,0 +1,1 @@
+if (!window_has_focus()) {window_set_TopMost()}

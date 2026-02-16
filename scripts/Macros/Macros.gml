@@ -1,6 +1,14 @@
 #macro FRAME game_get_speed(gamespeed_fps)
 #macro MODULE 16
 
+
 #macro VIEW_WIDTH 1280
 #macro VIEW_HEIGHT 720
 #macro VIEW_SCALE 2
+
+
+#macro WEIGTH_STATE_COMMON 50
+#macro WEIGTH_STATE_UNCOMMON 30
+#macro WEIGTH_STATE_RARE 15
+#macro WEIGTH_STATE_EPIC 5
+#macro WEIGTH_STATE_LEGENDARY 1
